@@ -1,0 +1,14 @@
+options.agent = new https.Agent(options);
+const req = https.request(options, (res) => {
+  console.log('All OK. Server matched our pinned cert or public key');
+  console.log('statusCode:', res.statusCode);
+  // Print the HPKP values
+  console.log('headers:', res.headers['public-key-pins']);
+
+  res.on('data', (d) => {});
+});
+
+req.on('error', (e) => {
+  console.error(e.message);
+});
+req.end(); 
