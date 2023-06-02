@@ -1,10 +1,5 @@
 const options = {
-  hostname: 'encrypted.google.com',
-  port: 443,
-  path: '/',
-  method: 'GET',
-  key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
-  cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem'),
+ this is java code branch
 };
 options.agent = new https.Agent(options);
 
